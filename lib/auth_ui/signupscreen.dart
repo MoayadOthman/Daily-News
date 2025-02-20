@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:joby/consts/colors.dart';
 
 import '../controllers/signup.dart';
+import '../widgets/custom_text_form.dart';
 
 
 class SignUpScreen extends StatefulWidget {
@@ -42,23 +43,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              TextFormField(
-                controller: username,
-                decoration: InputDecoration(
-                  hintText: "اسم المستخدم",
-                  prefixIcon: const Icon(Icons.person),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-                ),
-              ),
+              CustomTextForm(controller: username, title: "اسم المستخدم", icon:Icons.person_3,validator:(valid){} ,type: TextInputType.name,),
               const SizedBox(height: 16),
-              TextFormField(
-                controller: userEmail,
-                decoration: InputDecoration(
-                  hintText: "البريد الإلكتروني",
-                  prefixIcon: const Icon(Icons.email),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-                ),
-              ),
+              CustomTextForm(controller: userEmail, title: 'البريد الإلكتروني', icon:Icons.email_outlined,validator:(valid){} ,type: TextInputType.emailAddress,),
               const SizedBox(height: 16),
               Obx(() => TextFormField(
                 controller: userPassword,

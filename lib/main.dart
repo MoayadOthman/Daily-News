@@ -4,10 +4,6 @@ import 'package:joby/auth_ui/signupscreen.dart';
 import 'package:joby/auth_ui/splashscreen.dart';
 import 'package:joby/consts/consts.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:joby/viwes/add_screen.dart';
-import 'package:joby/viwes/home/BottomNav.dart';
-import 'package:joby/viwes/profile/edit_profile_screen.dart';
-import 'package:joby/viwes/profile/profile_screen.dart';
 
 import 'firebase_options.dart';
 
@@ -29,16 +25,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      textDirection: TextDirection.rtl,
+
       title: appname,
       theme: ThemeData(
-        fontFamily: 'Cairo',
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: appColor
         )
       ),
       debugShowCheckedModeBanner: false,
-      home:BottomNav(),
+      home:const SplashScreen(),
     );
   }
 }

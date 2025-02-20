@@ -11,6 +11,7 @@ import 'package:joby/consts/colors.dart';
 // استيراد وحدات التحكم اللازمة
 import '../../controllers/getuserdata.dart';
 import '../../controllers/signin.dart';
+import '../widgets/custom_text_form.dart';
 import 'forgerpasswordscreen.dart';
 // استيراد الثوابت المستخدمة في التطبيق
 // استيراد الشاشة الرئيسية للمدير
@@ -100,43 +101,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       SizedBox(height: Get.height / 50),
                       // حقل إدخال البريد الإلكتروني
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                        child: TextFormField(
-                          controller: userEmail,
-                          cursorColor:appColor,
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: const InputDecoration(
-                             enabledBorder: OutlineInputBorder(
-                               borderRadius: BorderRadius.all(Radius.circular(30)
-                               ),
-                             ),
-                            focusedBorder:OutlineInputBorder(
-                               borderRadius: BorderRadius.all(
-                                   Radius.circular(30)
-                               )
-                               ) ,
-                            errorBorder:OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                  Radius.circular(30))
-                            ),
-                            hintText: "البريد الإلكتروني",
-                            prefixIcon: Icon(Icons.email),
-                            border: OutlineInputBorder(
-
-                            ),
-                          ),
-                          validator: (value) {
-                            if (value == null || value.trim().isEmpty) {
-                              return 'ادخل بريدك الإلكتروني';
-                            }
-                            if (!GetUtils.isEmail(value.trim())) {
-                              return 'يجب أن يكون بريد إلكتروني';
-                            }
-                            return null;
-                          },
-                        ),
-                      ),
+                      CustomTextForm(controller: userEmail, title: 'البريد الإلكتروني', icon:Icons.email_outlined,validator:(valid){} ,type: TextInputType.emailAddress,),
                       SizedBox(height: Get.height / 50),
                       // حقل إدخال كلمة المرور مع خيار إظهار/إخفاء
 
@@ -333,4 +298,5 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 }
+
 

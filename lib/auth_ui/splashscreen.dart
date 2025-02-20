@@ -10,6 +10,8 @@ import 'package:joby/consts/colors.dart';
 import 'package:joby/consts/consts.dart';
 import 'package:joby/auth_ui/onborading_screen.dart';
 
+import '../viwes/home/BottomNav.dart';
+
 
 
 
@@ -47,8 +49,9 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Spacer(),
             const Icon(
-              Icons.laptop,
+              Icons.newspaper_sharp,
               size: 250,
               color: Colors.white, // لون الأيقونة باللون الأبيض
             ),
@@ -57,14 +60,39 @@ class _SplashScreenState extends State<SplashScreen> {
               alignment: Alignment.center,
               width: Get.width,
               child: const Text(
-                credits, // النص من الثوابت
+                appname, // النص من الثوابت
                 style: TextStyle(
-                  color: appColor, // لون النص
-                  fontSize: 14.0,
+                  color: Colors.white, // لون النص
+                  fontSize: 22.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
+            const Spacer(),
+            const Column(
+              children: [
+                Text(
+                  appversion, // النص من الثوابت
+                  style: TextStyle(
+                    color: Colors.white, // لون النص
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                Text(
+                  credits, // النص من الثوابت
+                  style: TextStyle(
+                    color: Colors.white, // لون النص
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+
+              ],
+            ),
+
           ],
         ),
       ),
@@ -78,7 +106,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> logged(BuildContext context) async {
     // التحقق إذا كان المستخدم مسجلاً الدخول
     if (user != null) {
-        // Get.offAll(() => ());
+        Get.offAll(() => BottomNav());
       }else{
       // إذا لم يكن المستخدم مسجلاً الدخول، الانتقال إلى شاشة الترحيب
       Get.offAll(() => const OnboardingScreen());

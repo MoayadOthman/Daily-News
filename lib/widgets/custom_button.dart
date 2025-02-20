@@ -17,7 +17,7 @@ class CustomButton extends StatelessWidget {
     return     Padding(
       padding: const EdgeInsets.only(left: 15.0,right: 15,bottom: 10),
       child: MaterialButton(
-        shape: OutlineInputBorder(
+        shape: const OutlineInputBorder(
           borderSide: BorderSide(width: 0,color: appColor),
           borderRadius: BorderRadius.all(Radius.circular(15)),
         ),
