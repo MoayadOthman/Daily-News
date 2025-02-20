@@ -1,4 +1,4 @@
-# Daily News ap
+# Daily News app
 
 A Daily News app is designed to provide users with the latest news updates in real-time. It aggregates content from various news sources, categorizing it by topics such as politics, entertainment, sports, business, technology, and more. The app allows users to read articles, watch videos, and stay informed about current events.
 ## Getting Started
