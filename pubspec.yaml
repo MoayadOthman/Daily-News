@@ -1,5 +1,5 @@
-name: joby
-description: "job finder is  an innovative app developed to connect job seekers with employers"
+name: daily news
+description: "A Daily News app is designed to provide users with the latest news updates in real-time. It aggregates content from various news sources, categorizing it by topics such as politics, entertainment, sports, business, technology, and more. The app allows users to read articles, watch videos, and stay informed about current events."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
